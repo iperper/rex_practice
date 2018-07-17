@@ -1,0 +1,3 @@
+g++ -c Vertex.cpp VertexSimple.cpp SegList.cpp
+ar cr libgeometry.a Vertex.o VertexSimple.o SegList.o
+echo Done!

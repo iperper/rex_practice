@@ -1,0 +1,12 @@
+g++ -o string_split string_split.cpp 
+echo DONE compiling string_split
+
+g++ -I../lib_strings -L../lib_strings -o string_bite string_bite.cpp -lstrings 
+echo DONE compiling string_bite
+
+g++ -I../lib_strings -L../lib_strings -o string_parse string_parse.cpp -lstrings
+echo DONE compiling string_parse
+
+g++ -I../lib_geometry -L../lib_geometry -I../lib_strings -L../lib_strings -o string_deserial string_deserial.cpp  -lgeometry -lstrings 
+echo DONE compiling string_deserial
+

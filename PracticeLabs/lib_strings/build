@@ -1,0 +1,3 @@
+g++ -c FileBuffer.cpp BiteString.cpp ParseString.cpp
+ar cr libstrings.a FileBuffer.o BiteString.o ParseString.o
+echo Done!
