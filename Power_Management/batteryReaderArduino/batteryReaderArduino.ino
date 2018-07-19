@@ -6,7 +6,7 @@
 
 * CREATED: 21 Jun 2018
 
-* MODIFIED: Thu 19 Jul 2018 10:56:38 AM EDT
+* MODIFIED: Thu 19 Jul 2018 12:21:05 PM EDT
 
 * CREATED BY: Isaac Perper 
 
@@ -25,16 +25,18 @@ int volt_pin = 5;
 VoltageMonitor voltSens(volt_pin);
 CurrentMonitor currentSens(current_pin);
 
-float min_SoC = 0.93; //SET!!,the lowest state of charge the battery should get
-float min_voltage = 11.5; //SET!, lowest voltage for battery
+float min_SoC = 0.35; //SET!!,the lowest state of charge the battery should get
+float min_voltage = 11.3; //SET!, lowest voltage for battery
 
 float batt_charged_volts = 13.5; //voltage of battery when fully charged
-int batt_mAh = 55000; // initial  mAh of battery at 20 hour discharge rate
-float discharge_const = 1.7;  // the exponential rate of battery discharge based on
+int batt_mAh = 55000; // initial  mAh of battery at 20 hour discharge rate, NOT USED
+float discharge_const = 1.5;  // the exponential rate of battery discharge based on
 
 
 // current (ie. twice the current discharge, the mAh capacity goes down by some amount
-Battery battery1("Battery 1", batt_mAh, batt_charged_volts, min_SoC, min_voltage, discharge_const);
+//Battery battery1("Battery 1", batt_mAh, batt_charged_volts, min_SoC, min_voltage, discharge_const);
+Battery battery1("Battery 1", discharge_const);
+
 
 unsigned long prev_time = 0;
 unsigned int loop_time = 100; //time between loops in milliseconds
@@ -43,8 +45,8 @@ void setup() {
   pinMode(current_pin, INPUT);
   pinMode(volt_pin, INPUT);
   Serial.begin(9600);
-  currentSens.setRef(4.94);
-  voltSens.setRef(4.94);
+  currentSens.setRef(5.0);
+  voltSens.setRef(5.0);
   
   int *r_vals;
   r_vals =  voltSens.getResistors();
@@ -60,29 +62,30 @@ void setup() {
 }
 
 bool update(){
-  bool batt_low = battery1.low_battery();
+  //bool batt_low = battery1.low_battery();
 
   if (millis()-prev_time > loop_time){
     float volts = voltSens.getVoltage();
     float current = currentSens.getCurrent();
     int percent_charge = battery1.updateVals(volts, current, loop_time);
-    char* batt_status = "LOW";
-    if (not batt_low)
-      batt_status = "OK";
+    //char* batt_status = "LOW";
+    //if (not batt_low)
+     // batt_status = "OK";
     char output[130];
   // sprintf(output, "%s | %s A | %s V(current) | %s V | %s V (voltage) | %s mAh | %i %% | %s |", battery1.getName(),
   // String(current,3).c_str(), String(currentSens.getPinVoltage(), 4).c_str(), String(volts, 2).c_str(),
   // String(voltSens.getPinVoltage(), 4).c_str(), String(battery1.getCharge()).c_str(),
     //percent_charge, batt_status);  
-    sprintf(output, "$ %s | %s | %s | %s | %i | %s \n",\
+    //sprintf(output, "$ %s | %s | %s | %s | %i | %s \n",\
     battery1.getName(), String(current,3).c_str(), String(volts, 2).c_str(),\
      String(battery1.getCharge()).c_str(),percent_charge, batt_status); 
-
+    sprintf(output, "$ %s | %s | %s | %s \n", battery1.getName(), String(current,3).c_str(),
+String(volts,2).c_str(), String(battery1.getCharge()).c_str());
     Serial.print(output);
     prev_time = millis();
     }
 
-  return (batt_low);
+  return (true);
 }
 
 

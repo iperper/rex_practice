@@ -6,7 +6,7 @@
 
 * CREATED: 22 Jun 2018
 
-* MODIFIED: Tue 26 Jun 2018 03:38:32 PM EDT
+* MODIFIED: Thu 19 Jul 2018 12:21:04 PM EDT
 
 * CREATED BY: Isaac Perper 
 
@@ -17,25 +17,25 @@ _._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._.*/
 
 class Battery{
   public: 
-    Battery(char* batt_name, int mAh, float charged_v, float minSoC, float minV, \
+    //Battery(char* batt_name, int mAh, float charged_v, float minSoC, float minV, \
         float constant) \
     {batt_mAh = mAh, curr_mAh = (float) mAh, charged_volts = charged_v, min_SoC = minSoC,\
         min_voltage = minV, name = batt_name;}; 
-    Battery(char* batt_name, int mAh) {batt_mAh = mAh, curr_mAh = float (mAh), \
-      charged_volts = 14.2, min_SoC = 0.3, min_voltage = 11.5, name = batt_name;};
+    Battery(char* batt_name, float constant){name = batt_name, discharge_const=constant;};
     ~Battery(){};
 
     float getVoltage() const {return (curr_voltage);};
-    float getCharge() const {return (curr_mAh); };
+    float getCharge() const {return (used_mAh); };
     char* getName() const {return (name);};
     int updateVals(float voltReading, float currentReading, unsigned int loop_time); 
     bool low_battery() const; // true if battery is low
-    float currentFactor(float millamps) const \
+    //float currentFactor(float millamps) const \
      {return pow (millamps/(batt_mAh/20),discharge_const);}
   
   private: 
-    float curr_mAh, min_SoC, min_voltage, charged_volts, discharge_const; 
-    int batt_mAh; 
+    float min_SoC, min_voltage, charged_volts, discharge_const; 
+    float used_mAh = 0;
+    //int batt_mAh; 
     float curr_voltage = 0;
     float curr_amps = 0; 
     char* name;

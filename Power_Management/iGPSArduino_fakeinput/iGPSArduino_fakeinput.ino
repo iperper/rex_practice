@@ -6,7 +6,7 @@
 
 * CREATED: 18 Jul 2018
 
-* MODIFIED: Wed 18 Jul 2018 02:58:50 PM EDT
+* MODIFIED: Thu 19 Jul 2018 01:04:33 PM EDT
 
 * CREATED BY: Isaac Perper 
 
@@ -24,7 +24,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  String out = "$ 1 | 2 | 3 | 4 |" + String(counter++) + "\n";
+  String out = "$ 1 | 2 | 3 |" + String(counter++) + "\n";
   Serial.print(out);
   digitalWrite(led,HIGH);
   delay(100);
