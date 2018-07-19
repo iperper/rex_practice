@@ -6,7 +6,7 @@
 
 * CREATED: 21 Jun 2018
 
-* MODIFIED: Mon 16 Jul 2018 03:29:16 PM EDT
+* MODIFIED: Thu 19 Jul 2018 10:56:38 AM EDT
 
 * CREATED BY: Isaac Perper 
 
@@ -48,14 +48,14 @@ void setup() {
   
   int *r_vals;
   r_vals =  voltSens.getResistors();
-  Serial.print("Voltage Sensor Resistors: R1 = "); Serial.print(*(r_vals)); 
-  Serial.print(" R2 = "); Serial.println(*(r_vals+1));
-  Serial.print("Current Sensor Reference Voltage: "); Serial.println(currentSens.getRef(), 5);
-  Serial.print("Current Sensor Conversion Factor (V/A)"); Serial.println(currentSens.getConv(), 5);
-  Serial.print("Voltage Sensor Reference Voltage: "); Serial.println(voltSens.getRef(), 5);
-  Serial.println("Setup Complete");
-  delay(2000);
-  Serial.println("$Battery | Current | Voltage | mAh Remaining | Percent Remaining | Status | \n");
+//  Serial.print("Voltage Sensor Resistors: R1 = "); Serial.print(*(r_vals)); 
+//  Serial.print(" R2 = "); Serial.println(*(r_vals+1));
+//  Serial.print("Current Sensor Reference Voltage: "); Serial.println(currentSens.getRef(), 5);
+//  Serial.print("Current Sensor Conversion Factor (V/A)"); Serial.println(currentSens.getConv(), 5);
+//  Serial.print("Voltage Sensor Reference Voltage: "); Serial.println(voltSens.getRef(), 5);
+//  Serial.println("Setup Complete");
+//  delay(2000);
+//  Serial.print("$Battery | Current | Voltage | mAh Remaining | Percent Remaining | Status \n");
   
 }
 
@@ -74,7 +74,7 @@ bool update(){
   // String(current,3).c_str(), String(currentSens.getPinVoltage(), 4).c_str(), String(volts, 2).c_str(),
   // String(voltSens.getPinVoltage(), 4).c_str(), String(battery1.getCharge()).c_str(),
     //percent_charge, batt_status);  
-    sprintf(output, "$ %s | %s A | %s V | %s mAh | %i %% | %s | \n",\
+    sprintf(output, "$ %s | %s | %s | %s | %i | %s \n",\
     battery1.getName(), String(current,3).c_str(), String(volts, 2).c_str(),\
      String(battery1.getCharge()).c_str(),percent_charge, batt_status); 
 
