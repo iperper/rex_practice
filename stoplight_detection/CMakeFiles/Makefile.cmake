@@ -49,4 +49,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/stoplight_detection.dir/DependInfo.cmake"
+  "CMakeFiles/test_finder.dir/DependInfo.cmake"
+  "CMakeFiles/test_filter.dir/DependInfo.cmake"
   )

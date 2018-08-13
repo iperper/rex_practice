@@ -123,6 +123,32 @@ stoplight_detection/fast:
 	$(MAKE) -f CMakeFiles/stoplight_detection.dir/build.make CMakeFiles/stoplight_detection.dir/build
 .PHONY : stoplight_detection/fast
 
+#=============================================================================
+# Target rules for targets named test_finder
+
+# Build rule for target.
+test_finder: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_finder
+.PHONY : test_finder
+
+# fast build rule for target.
+test_finder/fast:
+	$(MAKE) -f CMakeFiles/test_finder.dir/build.make CMakeFiles/test_finder.dir/build
+.PHONY : test_finder/fast
+
+#=============================================================================
+# Target rules for targets named test_filter
+
+# Build rule for target.
+test_filter: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_filter
+.PHONY : test_filter
+
+# fast build rule for target.
+test_filter/fast:
+	$(MAKE) -f CMakeFiles/test_filter.dir/build.make CMakeFiles/test_filter.dir/build
+.PHONY : test_filter/fast
+
 color_filter.o: color_filter.cpp.o
 
 .PHONY : color_filter.o
@@ -130,6 +156,7 @@ color_filter.o: color_filter.cpp.o
 # target to build an object file
 color_filter.cpp.o:
 	$(MAKE) -f CMakeFiles/stoplight_detection.dir/build.make CMakeFiles/stoplight_detection.dir/color_filter.cpp.o
+	$(MAKE) -f CMakeFiles/test_filter.dir/build.make CMakeFiles/test_filter.dir/color_filter.cpp.o
 .PHONY : color_filter.cpp.o
 
 color_filter.i: color_filter.cpp.i
@@ -139,6 +166,7 @@ color_filter.i: color_filter.cpp.i
 # target to preprocess a source file
 color_filter.cpp.i:
 	$(MAKE) -f CMakeFiles/stoplight_detection.dir/build.make CMakeFiles/stoplight_detection.dir/color_filter.cpp.i
+	$(MAKE) -f CMakeFiles/test_filter.dir/build.make CMakeFiles/test_filter.dir/color_filter.cpp.i
 .PHONY : color_filter.cpp.i
 
 color_filter.s: color_filter.cpp.s
@@ -148,6 +176,7 @@ color_filter.s: color_filter.cpp.s
 # target to generate assembly for a file
 color_filter.cpp.s:
 	$(MAKE) -f CMakeFiles/stoplight_detection.dir/build.make CMakeFiles/stoplight_detection.dir/color_filter.cpp.s
+	$(MAKE) -f CMakeFiles/test_filter.dir/build.make CMakeFiles/test_filter.dir/color_filter.cpp.s
 .PHONY : color_filter.cpp.s
 
 findObject.o: findObject.cpp.o
@@ -157,6 +186,7 @@ findObject.o: findObject.cpp.o
 # target to build an object file
 findObject.cpp.o:
 	$(MAKE) -f CMakeFiles/stoplight_detection.dir/build.make CMakeFiles/stoplight_detection.dir/findObject.cpp.o
+	$(MAKE) -f CMakeFiles/test_finder.dir/build.make CMakeFiles/test_finder.dir/findObject.cpp.o
 .PHONY : findObject.cpp.o
 
 findObject.i: findObject.cpp.i
@@ -166,6 +196,7 @@ findObject.i: findObject.cpp.i
 # target to preprocess a source file
 findObject.cpp.i:
 	$(MAKE) -f CMakeFiles/stoplight_detection.dir/build.make CMakeFiles/stoplight_detection.dir/findObject.cpp.i
+	$(MAKE) -f CMakeFiles/test_finder.dir/build.make CMakeFiles/test_finder.dir/findObject.cpp.i
 .PHONY : findObject.cpp.i
 
 findObject.s: findObject.cpp.s
@@ -175,6 +206,7 @@ findObject.s: findObject.cpp.s
 # target to generate assembly for a file
 findObject.cpp.s:
 	$(MAKE) -f CMakeFiles/stoplight_detection.dir/build.make CMakeFiles/stoplight_detection.dir/findObject.cpp.s
+	$(MAKE) -f CMakeFiles/test_finder.dir/build.make CMakeFiles/test_finder.dir/findObject.cpp.s
 .PHONY : findObject.cpp.s
 
 main.o: main.cpp.o
@@ -204,6 +236,60 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/stoplight_detection.dir/build.make CMakeFiles/stoplight_detection.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+test_filter.o: test_filter.cpp.o
+
+.PHONY : test_filter.o
+
+# target to build an object file
+test_filter.cpp.o:
+	$(MAKE) -f CMakeFiles/test_filter.dir/build.make CMakeFiles/test_filter.dir/test_filter.cpp.o
+.PHONY : test_filter.cpp.o
+
+test_filter.i: test_filter.cpp.i
+
+.PHONY : test_filter.i
+
+# target to preprocess a source file
+test_filter.cpp.i:
+	$(MAKE) -f CMakeFiles/test_filter.dir/build.make CMakeFiles/test_filter.dir/test_filter.cpp.i
+.PHONY : test_filter.cpp.i
+
+test_filter.s: test_filter.cpp.s
+
+.PHONY : test_filter.s
+
+# target to generate assembly for a file
+test_filter.cpp.s:
+	$(MAKE) -f CMakeFiles/test_filter.dir/build.make CMakeFiles/test_filter.dir/test_filter.cpp.s
+.PHONY : test_filter.cpp.s
+
+test_finder.o: test_finder.cpp.o
+
+.PHONY : test_finder.o
+
+# target to build an object file
+test_finder.cpp.o:
+	$(MAKE) -f CMakeFiles/test_finder.dir/build.make CMakeFiles/test_finder.dir/test_finder.cpp.o
+.PHONY : test_finder.cpp.o
+
+test_finder.i: test_finder.cpp.i
+
+.PHONY : test_finder.i
+
+# target to preprocess a source file
+test_finder.cpp.i:
+	$(MAKE) -f CMakeFiles/test_finder.dir/build.make CMakeFiles/test_finder.dir/test_finder.cpp.i
+.PHONY : test_finder.cpp.i
+
+test_finder.s: test_finder.cpp.s
+
+.PHONY : test_finder.s
+
+# target to generate assembly for a file
+test_finder.cpp.s:
+	$(MAKE) -f CMakeFiles/test_finder.dir/build.make CMakeFiles/test_finder.dir/test_finder.cpp.s
+.PHONY : test_finder.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -211,8 +297,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... stoplight_detection"
 	@echo "... edit_cache"
+	@echo "... stoplight_detection"
+	@echo "... test_finder"
+	@echo "... test_filter"
 	@echo "... color_filter.o"
 	@echo "... color_filter.i"
 	@echo "... color_filter.s"
@@ -222,6 +310,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... test_filter.o"
+	@echo "... test_filter.i"
+	@echo "... test_filter.s"
+	@echo "... test_finder.o"
+	@echo "... test_finder.i"
+	@echo "... test_finder.s"
 .PHONY : help
 
 

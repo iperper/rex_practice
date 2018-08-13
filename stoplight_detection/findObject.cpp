@@ -6,7 +6,7 @@
 
 * CREATED: 08 Aug 2018
 
-* MODIFIED: Wed 08 Aug 2018 04:54:10 PM EDT
+* MODIFIED: Fri 10 Aug 2018 11:39:55 AM EDT
 
 * CREATED BY: Isaac Perper (with helo from OpenCV demo code)
 
@@ -22,7 +22,7 @@ using namespace std;
 using namespace cv;
 
 
-void findObject(Mat &img, Mat &templ, Mat &result, int method, vector<Point> &match_locations)
+double findObject(Mat &img, Mat &templ, Mat &result, int method, vector<Point> &match_locations, int thresh)
 {
   //Create properly size image result output
   int result_cols =  img.cols - templ.cols + 1;
@@ -46,10 +46,13 @@ void findObject(Mat &img, Mat &templ, Mat &result, int method, vector<Point> &ma
   
   //find the max match value
   minMaxLoc( result, &minVal, &maxVal, &minLoc, &maxLoc, Mat() );
- 
-  cout << maxVal << endl; 
+  
+//  if (maxVal*50/templ.rows > thresh){
+ //   cout << maxVal*50/templ.rows << endl;
+ // } 
+ //cout << maxVal << endl;
 
   match_locations.push_back(maxLoc);
 
-  return;
+  return maxVal;
 }

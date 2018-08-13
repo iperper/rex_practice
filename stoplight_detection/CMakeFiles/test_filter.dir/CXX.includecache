@@ -26,23 +26,13 @@ opencv2/core/mat.hpp
 vector
 -
 
-/home/isaac/REX-UROP/rex_practice/stoplight_detection/findObject.cpp
-opencv2/imgcodecs.hpp
-/home/isaac/REX-UROP/rex_practice/stoplight_detection/opencv2/imgcodecs.hpp
-opencv2/imgproc.hpp
-/home/isaac/REX-UROP/rex_practice/stoplight_detection/opencv2/imgproc.hpp
-findObject.h
-/home/isaac/REX-UROP/rex_practice/stoplight_detection/findObject.h
-iostream
--
-
 /home/isaac/REX-UROP/rex_practice/stoplight_detection/findObject.h
 opencv2/core/mat.hpp
 /home/isaac/REX-UROP/rex_practice/stoplight_detection/opencv2/core/mat.hpp
 vector
 -
 
-/home/isaac/REX-UROP/rex_practice/stoplight_detection/main.cpp
+/home/isaac/REX-UROP/rex_practice/stoplight_detection/test_filter.cpp
 opencv2/highgui.hpp
 /home/isaac/REX-UROP/rex_practice/stoplight_detection/opencv2/highgui.hpp
 opencv2/imgcodecs.hpp

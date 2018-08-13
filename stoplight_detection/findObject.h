@@ -6,7 +6,7 @@
 
 * CREATED: 08 Aug 2018
 
-* MODIFIED: Wed 08 Aug 2018 03:26:25 PM EDT
+* MODIFIED: Fri 10 Aug 2018 11:40:19 AM EDT
 
 * CREATED BY: Isaac Perper 
 
@@ -20,6 +20,6 @@ _._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._.*/
 
 using namespace cv;
 
-void findObject(Mat &img, Mat &templ, Mat &result, int method, std::vector<Point> &match_locations);
+double findObject(Mat &img, Mat &templ, Mat &result, int method, std::vector<Point> &match_locations, int thresh);
 
 #endif

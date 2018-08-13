@@ -97,6 +97,80 @@ clean: CMakeFiles/stoplight_detection.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/test_finder.dir
+
+# All Build rule for target.
+CMakeFiles/test_finder.dir/all:
+	$(MAKE) -f CMakeFiles/test_finder.dir/build.make CMakeFiles/test_finder.dir/depend
+	$(MAKE) -f CMakeFiles/test_finder.dir/build.make CMakeFiles/test_finder.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/isaac/REX-UROP/rex_practice/stoplight_detection/CMakeFiles --progress-num=8,9,10 "Built target test_finder"
+.PHONY : CMakeFiles/test_finder.dir/all
+
+# Include target in all.
+all: CMakeFiles/test_finder.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_finder.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/isaac/REX-UROP/rex_practice/stoplight_detection/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_finder.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/isaac/REX-UROP/rex_practice/stoplight_detection/CMakeFiles 0
+.PHONY : CMakeFiles/test_finder.dir/rule
+
+# Convenience name for target.
+test_finder: CMakeFiles/test_finder.dir/rule
+
+.PHONY : test_finder
+
+# clean rule for target.
+CMakeFiles/test_finder.dir/clean:
+	$(MAKE) -f CMakeFiles/test_finder.dir/build.make CMakeFiles/test_finder.dir/clean
+.PHONY : CMakeFiles/test_finder.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/test_finder.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_filter.dir
+
+# All Build rule for target.
+CMakeFiles/test_filter.dir/all:
+	$(MAKE) -f CMakeFiles/test_filter.dir/build.make CMakeFiles/test_filter.dir/depend
+	$(MAKE) -f CMakeFiles/test_filter.dir/build.make CMakeFiles/test_filter.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/isaac/REX-UROP/rex_practice/stoplight_detection/CMakeFiles --progress-num=5,6,7 "Built target test_filter"
+.PHONY : CMakeFiles/test_filter.dir/all
+
+# Include target in all.
+all: CMakeFiles/test_filter.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_filter.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/isaac/REX-UROP/rex_practice/stoplight_detection/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_filter.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/isaac/REX-UROP/rex_practice/stoplight_detection/CMakeFiles 0
+.PHONY : CMakeFiles/test_filter.dir/rule
+
+# Convenience name for target.
+test_filter: CMakeFiles/test_filter.dir/rule
+
+.PHONY : test_filter
+
+# clean rule for target.
+CMakeFiles/test_filter.dir/clean:
+	$(MAKE) -f CMakeFiles/test_filter.dir/build.make CMakeFiles/test_filter.dir/clean
+.PHONY : CMakeFiles/test_filter.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/test_filter.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.
